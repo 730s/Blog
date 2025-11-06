@@ -11,39 +11,66 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.login-container {
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    max-width: 400px;
-    padding: 20px;
+    min-height: 100vh;
+    padding: 30px 16px;   
+    position: relative;
 }
 
-.login-box {
+.logo-container {
+    position: absolute;
+    top: 2.5rem;
+    left: 30px;
+    z-index: 5;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+.cadastro-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.cadastro-box {
     background: #fff;
     border-radius: 20px;
     padding: 40px 30px;
     box-shadow: 0 8px 20px rgba(87, 67, 69, 0.2);
     text-align: center;
-    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 450px;
+    margin-top: 10px;
 }
 
-.login-box h1 {
+.cadastro-box h1 {
     font-size: 2em;
     color: var(--cor-texto);
-    margin-bottom: 10px;
-}
-
-.login-box p {
-    color: #776e70;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .input-group {
@@ -88,7 +115,7 @@ button:hover {
     transform: scale(1.02);
 }
 
-.create-account {
+.login-link {
     display: inline-block;
     margin-top: 15px;
     color: var(--cor-texto);
@@ -98,36 +125,48 @@ button:hover {
     transition: color 0.3s ease;
 }
 
-.create-account:hover {
+.login-link:hover {
     color: #776e70;
     text-decoration: underline;
 }
 
-.logo-container {
-    position: absolute;
-    top: 20px;
-    left: 30px;
-}
-
-.logo {
-    width: 100px;       
-    height: auto;
-}
-
 .footer {
-    position: fixed;
-    bottom: 15px;
-    width: 100%;
     text-align: center;
     color: #776e70;
     font-size: 0.9em;
     font-weight: 500;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+    .logo-container {
+        position: static;   
+        align-self: flex-start;
+        margin-left: 6px;
+        margin-bottom: 8px;
+    }
+
+    .logo {
+        width: 72px;
+    }
+
+    .page-wrapper {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .cadastro-box {
+        padding: 28px 18px;
+    }
 }
 
 @media (max-height: 500px) {
-    .footer {
-        position: static;
-        margin-top: 20px;
+    .cadastro-box {
+        padding: 20px;
+    }
+
+    .logo {
+        width: 64px;
     }
 }
 
